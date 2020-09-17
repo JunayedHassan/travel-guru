@@ -1,0 +1,23 @@
+.Loginnavlink {
+    color: black;
+    list-style-type: none;
+    display: inline;
+    margin-left: 80px;
+}
+
+.Navlogo {
+    width: 110px;
+    height: 40px;
+}
+
+.loginBody {
+    padding-top: 30px;
+    background-color: rgb(253, 158, 158);
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+
+.navBox {
+    float: right;
+}

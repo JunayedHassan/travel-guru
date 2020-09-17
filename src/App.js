@@ -1,24 +1,54 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Home from './Components/Home/Home';
+import Destination from './Components/Destination/Destination';
+import Blog from './Components/Blog/Blog';
+import Contact from './Components/Contact/Contact';
+import Login from './Components/Login/Login';
+import TravelTo from './Components/TravelTo/TravelTo';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import NotFound from './Components/NotFound/NotFound';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <div className="blackTransparent"> */}
+      <Router>
+        {/* <Header></Header> */}
+        <Switch>
+          <Route path="/destination">
+            <Destination></Destination>
+          </Route>
+          <Route path="/blog">
+            <Blog></Blog>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/contact">
+            <Contact></Contact>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/location/:locationKey">
+            <TravelTo></TravelTo>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
+        </Switch>
+      </Router>
+      {/* </div> */}
     </div>
   );
 }
