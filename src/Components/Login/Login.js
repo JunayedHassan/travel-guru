@@ -16,9 +16,6 @@ const Login = () => {
         email: '',
 
     });
-    let pass = document.getElementById('pass');
-    let cnfPass = document.getElementById('cnfPass');
-
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const history = useHistory();
@@ -99,11 +96,12 @@ const Login = () => {
                 .then(res => {
                     userUpdate(res);
                     updateUserName(user.name);
+                    history.replace(from);
                 })
                 .catch(error => {
                     catchError(error);
                 });
-            history.replace(from);
+            
         }
         const userUpdate = (res) => {
             const newUserInfo = { ...user };
@@ -182,11 +180,9 @@ const Login = () => {
                     <input type="password" name="password" onBlur={handleBlur} className="form-control blackcolor" id="pass" placeholder="Password" required />
                     <br />
                     {
-                        !newUser && <input type="submit" className="btn btn-primary buttonNomargin" value='Sign In' />
+                        <input type="submit" className="btn btn-primary buttonNomargin" value={!newUser ? 'Sign In' : 'Create an Account'} />
                     }
-                    {
-                        newUser && <input type="submit" className="btn btn-primary buttonNomargin" value='Create an Account' />
-                    }
+
 
                     <br />
                     <br />
