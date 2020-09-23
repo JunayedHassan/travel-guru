@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Home from './Components/Home/Home';
@@ -13,14 +13,16 @@ import {
   Route,
 } from "react-router-dom";
 import NotFound from './Components/NotFound/NotFound';
+import SelectHotel from './Components/SelectHotel/SelectHotel';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
-
+export const UserContext = createContext();
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div className="App">
-      {/* <div className="blackTransparent"> */}
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]} className="App">
+
       <Router>
-        {/* <Header></Header> */}
         <Switch>
           <Route path="/destination">
             <Destination></Destination>
@@ -34,6 +36,9 @@ function App() {
           <Route path="/contact">
             <Contact></Contact>
           </Route>
+          <PrivateRoute path="/selecthotel/:locationKey">
+            <SelectHotel></SelectHotel>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
@@ -48,8 +53,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      {/* </div> */}
-    </div>
+    </UserContext.Provider>
   );
 }
 

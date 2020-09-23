@@ -5,7 +5,7 @@ const Blog = () => {
         <div className="mainHomeBody">
             <div className="blackTransparent">
                 <Header></Header>
-                <h1>Developer sleeping</h1>
+                <h1 style={{color: "white"}}>Developer sleeping</h1>
             </div>
         </div>
     );

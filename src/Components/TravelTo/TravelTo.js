@@ -1,15 +1,22 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { Link, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import logo from '../Header/Logo.png';
 import fakeData from '../fakeData';
 import './TravelTo.css'
 
 const TravelTo = () => {
+
     const { locationKey } = useParams()
     const fetchName = fakeData.find(ln => ln.key === locationKey)
     const { placeName, details } = fetchName;
+
+    const history = useHistory();
+    const handleBooking = () => {
+        history.push('/SelectHotel/' + locationKey)
+    }
+
     return (
         <div className="mainHomeBody">
             <div className="blackTransparent">
@@ -41,19 +48,19 @@ const TravelTo = () => {
 
                 <div className="fromTo row">
                     <div className="col-3">
-                        <h1>{placeName}</h1>
-                        <p>{details}</p>
+                        <h1 className="travelPrimaryColor">{placeName}</h1>
+                        <p className="travelPrimaryColor">{details}</p>
                     </div>
                     <form className="bookingBox">
                         <div className="form-group">
-                        <label>Origin</label>
+                            <label>Origin</label>
                             <input type="text" className="travelForm form-control" defaultValue="Dhaka" />
-                        <br/>
+                            <br />
                             <label>Destination</label>
                             <input type="text" className="travelForm form-control" value={placeName} />
                         </div>
-                        
-                        <button type="submit" className="btn btn-primary">Submit</button>
+
+                        <button type="submit" className="btn btn-primary" onClick={handleBooking}>Submit</button>
                     </form>
                 </div>
             </div>

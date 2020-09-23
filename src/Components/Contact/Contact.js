@@ -5,7 +5,7 @@ const Contact = () => {
         <div className="mainHomeBody">
             <div className="blackTransparent">
                 <Header></Header>
-                <h1>Developer is drank</h1>
+                <h1 style={{color: "white"}}>Developer is drank</h1>
             </div>
         </div>
     );
