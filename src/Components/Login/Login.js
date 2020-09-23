@@ -180,9 +180,6 @@ const Login = () => {
                     <input type="email" onBlur={handleBlur} className="form-control blackcolor" name="email" aria-describedby="emailHelp" placeholder="Enter email" required />
                     <small style={{ color: 'red' }}>{user.error}</small>
                     <input type="password" name="password" onBlur={handleBlur} className="form-control blackcolor" id="pass" placeholder="Password" required />
-                    {
-                        newUser && <input type="password" name="Cnfpassword" onBlur={handleBlur} className="form-control blackcolor" id="cnfPass" placeholder="Confirm Password" required />
-                    }
                     <br />
                     {
                         !newUser && <input type="submit" className="btn btn-primary buttonNomargin" value='Sign In' />
