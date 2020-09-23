@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const LocationName = (props) => {
     const { placeName, img, key } = props.location
-    console.log(img)
     return (
         <div className="col-2">
             <Link to={"/location/" + key}>

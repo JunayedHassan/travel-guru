@@ -39,9 +39,6 @@ const SelectHotel = (props) => {
                             <Link className="Loginnavlink" to="../blog">Blog</Link>
                             <Link className="Loginnavlink" to="../contact">Contact</Link>
                         </nav>
-                        {
-                            // user.isSignedIn && <button onClick={handleSignOut}>Log Out</button>
-                        }
                     </div>
 
                 </div>
@@ -83,12 +80,8 @@ const SelectHotel = (props) => {
                             width: '50%',
                             height: '100%',
                         }}
-
-
-                        initialCenter={ locationKey === 'B446F3M7OM' ? sreemangal : locationKey === 'B01633M7OM' ? sajek : sundarban}
-                        
-                        
-                        >
+                        initialCenter={locationKey === 'B446F3M7OM' ? sreemangal : locationKey === 'B01633M7OM' ? sajek : sundarban}
+                    >
                         <Marker
                             name={'sundarban'} />
                     </Map>

@@ -26,9 +26,9 @@ const TravelTo = () => {
                         <img className="logo" src={logo} alt="logo" />
                         <div className="navSignUp col-7">
                             <div className="searchBox">
-                                <div class="form-inline">
+                                <div className="form-inline">
 
-                                    <i class="fas fa-search" aria-hidden="true"><FontAwesomeIcon icon={faSearch} /></i>
+                                    <i className="fas fa-search" aria-hidden="true"><FontAwesomeIcon icon={faSearch} /></i>
                                     <input className="form-control" type="text" placeholder="Search your destination"
                                         aria-label="Search" />
                                 </div>
