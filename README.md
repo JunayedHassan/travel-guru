@@ -1,5 +1,5 @@
 # Travel Guru
-*A complete ecommerce website including admin dashboard to update services*
+*A demo website to take tour service*
 
 This project was created by using react, react-router, bootstrap, cors, body-parser, mongodb.
 
